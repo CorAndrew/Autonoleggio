@@ -39,10 +39,8 @@
                 
                 <ListBox Name="ListaVeicoli" Height="150" SelectionChanged="ListaVeicoli_SelectionChanged"/>
                 
-                <!-- Bottone Rimuovi per eliminare il veicolo selezionato -->
                 <Button Name="BtnRimuovi" Content="Rimuovi veicolo selezionato" Click="BtnRimuovi_Click"/>
                 
-                <!-- Etichetta per le statistiche della flotta -->
                 <TextBlock Name="TxtStatistiche" FontWeight="Bold"/>
                 
                 <TextBlock Text="Giorni di noleggio (da 1 a 60)"/>
