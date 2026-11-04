@@ -1,0 +1,60 @@
+﻿<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="500"
+        x:Class="Autonoleggio.MainWindow"
+        Title="Autonoleggio">
+    
+    <ScrollViewer>
+        <Grid ColumnDefinitions="*, *" Margin="20">
+
+            <StackPanel Grid.Column="0" Spacing="8" Margin="0,0,10,0">
+                <TextBlock Text="Nuovo Veicolo" FontWeight="Bold" FontSize="16"/>
+                
+                <TextBlock Text="Tipo veicolo:"/>
+                <ComboBox Name="CmbVeicolo" SelectedIndex="0" HorizontalAlignment="Stretch" SelectionChanged="CmbVeicolo_SelectionChanged">
+                    <ComboBoxItem Content="Auto"/>
+                    <ComboBoxItem Content="Moto"/>
+                    <ComboBoxItem Content="Furgone"/>
+                    <ComboBoxItem Content="Auto elettrica"/>
+                </ComboBox>
+                
+                <TextBlock Text="Targa:"/>
+                <TextBox Name="TxtTarga"/>
+
+                <TextBlock Text="Modello:"/>
+                <TextBox Name="TxtModello"/>
+                
+                <TextBlock Text="Autonomia in km"/>
+                <TextBox Name="TxtAutonomia"/>
+                
+                <Button Name="BtnAggiungi" Content="Aggiungi alla flotta" Click="BtnAggiungi_Click"/>
+                
+                <TextBlock Name="TxtErrori" TextWrapping="Wrap" FontWeight="Bold"/>
+            </StackPanel>
+            
+            <StackPanel Grid.Column="1" Spacing="8" Margin="10,0,0,0">
+                <TextBlock Text="Flotta Veicoli" FontWeight="Bold" FontSize="16"/>
+                
+                <ListBox Name="ListaVeicoli" Height="150" SelectionChanged="ListaVeicoli_SelectionChanged"/>
+                
+                <!-- Bottone Rimuovi per eliminare il veicolo selezionato -->
+                <Button Name="BtnRimuovi" Content="Rimuovi veicolo selezionato" Click="BtnRimuovi_Click"/>
+                
+                <!-- Etichetta per le statistiche della flotta -->
+                <TextBlock Name="TxtStatistiche" FontWeight="Bold"/>
+                
+                <TextBlock Text="Giorni di noleggio (da 1 a 60)"/>
+                <NumericUpDown Name="NumGiorni" Minimum="1" Maximum="60" Value="1"/>
+                
+                <CheckBox Name="ChkAssicurazione" Content="Assicurazione completa (15 €/giorno)"/>
+     
+                <Button Name="BtnCalcola" Content="Calcola preventivo" Click="BtnCalcola_Click"/>
+                
+                <TextBlock Name="TxtPreventivo" FontWeight="Bold" TextWrapping="Wrap" FontSize="14"/>
+            </StackPanel>
+            
+        </Grid>
+    </ScrollViewer>
+</Window>
